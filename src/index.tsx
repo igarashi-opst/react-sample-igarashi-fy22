@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
+import Howto from './pages/Howto/index';
+import Sample from './pages/Howto/sample/index'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    Hallo World!
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='howto' element={<Howto />} />
+        <Route path='howto/sample' element={<Sample />} />
+        <Route path='*' element={
+          <main>
+            <p>404エラー</p>
+          </main>
+        } />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
