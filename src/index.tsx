@@ -7,6 +7,7 @@ import Howto from './pages/Howto/index';
 import Todo from './pages/Todo/index';
 import Sample from './pages/Howto/sample/index'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Conponents from './pages/components/index';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,7 @@ root.render(
         <Route path='howto' element={<Howto />} />
         <Route path='todo' element={<Todo />} />
         <Route path='howto/sample' element={<Sample />} />
+        <Route path='conponents'  element={<Conponents />} />
         <Route path='*' element={
           <main>
             <p>404エラー</p>
